@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>elsiff</title>
+    <style>
+      body {
+        margin: 0;
+        margin-top: -21px;
+        padding: 0;
+      }
+      
+      h1 {
+        margin: 0px;
+      }
+
+      .container {
+        padding-left: 20%;
+        padding-right: 20%;
+      }
+      
+      a:link,
+      a:visited,
+      a:active,
+      a:hover {
+        color: inherit;
+        text-decoration: none;
+      }
+      
+      .bordered_button span {
+        display: inline-block;
+        border: 2px solid white;
+        padding: 10px;
+        margin: 10px;
+      }
+      
+      .filled_button span {
+        display: inline-block;
+        background: white;
+        color: black;
+        mix-blend-mode: lighten;
+        border: none;
+        padding: 15px;
+        marign: 10px;
+      }
+
+      #title {
+        background-color: #03A9F4;
+        padding-top: 10em;
+        padding-bottom: 6em;
+        color: white;
+        text-decoration: bold;
+        text-align: center;
+      }
+
+      #content01 {
+        padding-top: 12em;
+        padding-bottom: 12em;
+        text-align: center;
+        color: #424242;
+      }
+
+      #content02 {
+        background-color: #FF5252;
+        padding-top: 14em;
+        padding-bottom: 14em;
+        color: white;
+        text-align: left;
+      }
+
+      #content03 {
+        background-color: white;
+        padding-top: 6em;
+        padding-bottom: 10em;
+        color: #424242;
+        text-align: center;
+      }
+
+      #content04_bg {
+        background-color: #FF6F00;
+        background-image: url("bg_concert.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: right;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      #content04 {
+        background: linear-gradient(to right, #FF6F00 30%, #FF6F0000);
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        padding-top: 8em;
+        padding-bottom: 8em;
+        color: white;
+        text-align: left;
+      }
+
+      #content05 {
+        background-color: #795548;
+        padding-top: 3em;
+        padding-bottom: 3em;
+        color: white;
+        text-align: right;
+      }
+      
+      #footer {
+        background-color: #263238;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        color: white;
+        text-align: center;
+        font-size: 8pt;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="title">
+      <h1 style="font-size: 120px; margin: 0">elsiff</h1>
+      <h2 style="position: relative; top: -50px; font-size: 100px; margin: 0">─</h2>
+    </div>
+
+    <div class="container" id="content01">
+      <h1 style="font-size: 50pt">Who Am I?</h1>
+      <p>
+        I'm your father<br />
+        blablablablablablablabla<br />
+        blablablabla<br />
+        blablablabla
+      </p>
+    </div>
+
+    <div class="container" id="content02">
+      <h1 style="font-family: serif; font-size: 50pt; text-decoration: underline">What I studied</h1>
+      <p>
+        Hello
+      </p>
+    </div>
+
+    <div class="container" id="content03">
+      <h1 style="font-size: 50pt">My works</h1>
+      <table style="width: 100%; margin-top: 50px; padding-bottom: 50px; background-color: #EEEEEE">
+        <tr>
+          <th style="width: 50%">
+            <h2>Completed</h2>
+          </th>
+          <th style="width: 50%">
+            <h2>In Progress</h2>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <ul style="display: table; margin: 0 auto; text-align: left;">
+              <li>MoreFish (Spigot Plugin)</li>
+              <li>HoloMedals (Spigot Plugin)</li>
+              <li>UnderTaker (Video Game)</li>
+            </ul>
+          </td>
+          <td>
+            <ul style="display: table; margin: 0 auto; text-align: left;">
+              <li>EndlessSky (MC Server)</li>
+              <li>PCP Otter (Mobile Game)</li>
+              <li>
+                <span style="text-decoration: line-through">E-PPLE (MC Server)</span>
+                <i>cancelled</i>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="content04_bg">
+      <div class="container" id="content04">
+        <h1 style="font-size: 40pt;">Why don't you try my music?</h1>
+        <table style="width: 100%">
+          <tr>
+            <td style="width: 80%; text-align: left">
+              <p style="margin-bottom: 30px">
+                Click below:
+              </p>
+              <a class="filled_button" href="https://soundcloud.com/elsiff" target="_blank">
+                <span>
+                  <b style="font-size: 13pt;">SoundCloud</b>
+                </span>
+              </a>
+            </td>
+            <td style="width: 20%; text-align: center">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    
+    <div class="container" id="content05">
+      <h1 style="font-size: 30pt; text-transform: uppercase">contact</h1>
+      <table style="width: 100%">
+        <tr>
+          <td style="width: 70%; text-align: left">
+            <a class="bordered_button" href="https://github.com/elsiff" target="_blank">
+              <span>
+                <b>GitHub</b>
+              </span>
+            </a>
+            <a class="bordered_button" href="https://www.spigotmc.org/members/elsiff.206638/" target="_blank">
+              <span>
+                <b>SpigotMC</b>
+              </span>
+            </a>
+            <a class="bordered_button" href="https://blog.naver.com/cwjh1002" target="_blank">
+              <span>
+                <b>NAVER Blog</b>
+              </span>
+            </a>
+          </td>
+          <td style="width: 30%; text-align: right">
+            <p>
+              <a class="undecorated_link" href="mailto://elsiff@gmail.com">elsiff1002@gmail.com</a><br />
+              telegram@elsiff<br />
+              skype:naefeg<br />
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+    <div class="container" id="footer">
+      <p>
+        elsiff1002@gmail.com<br />
+        Powered by <strong>GitHub</strong> Pages
+      </p>
+    </div>
+  </body>
+</html>
