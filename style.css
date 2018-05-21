@@ -21,15 +21,15 @@ p {
     color: gray;
 }
 
-    .navbar a {
-        display: block;
-        float: left;
-        padding: 1em 1.5em 1em 1.5em;
-    }
+.navbar a {
+    display: block;
+    float: left;
+    padding: 1em 1.5em 1em 1.5em;
+}
 
-        .navbar a:hover {
-            background-color: lightgray;
-        }
+.navbar a:hover {
+    background-color: lightgray;
+}
 
 .card {
     display: inline-block;
@@ -38,16 +38,16 @@ p {
     text-align: left;
 }
 
-    .card h1 {
-        font-size: 16pt;
-    }
+.card h1 {
+    font-size: 16pt;
+}
 
-    .card h1,
-    .card p {
-        padding: 30px;
-        margin: 0;
-        padding: 0px 20px 10px 20px;
-    }
+.card h1,
+.card p {
+    padding: 30px;
+    margin: 0;
+    padding: 0px 20px 10px 20px;
+}
 
 .card_header {
     background-color: #00000010;
