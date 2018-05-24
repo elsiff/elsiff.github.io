@@ -19,6 +19,7 @@ p {
     position: fixed;
     top: 0;
     color: gray;
+    transition: top 0.3s;
 }
 
 .navbar a {

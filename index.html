@@ -10,9 +10,21 @@
     <meta name="author" content="elsiff" />
     <meta name="description" content="elsiff's portfolio page" />
     <meta http-equiv=“content-type” content=“text/html;charset =euc-kr” />
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-70px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
 </head>
 <body>
-    <div class="navbar">
+    <div class="navbar" id="navbar">
         <a href="#title"><strong>elsiff</strong></a>
         <a href="#introduction">Introduction</a>
         <a href="#skills">Skills</a>
