@@ -161,8 +161,8 @@ a:link, a:visited, a:active, a:hover {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("bg_code.jpg");
     background-position: center top;
     background-attachment: fixed;
-    padding-top: 6em;
-    padding-bottom: 6em;
+    padding-top: 10em;
+    padding-bottom: 10em;
     color: white;
     text-align: left;
 }
