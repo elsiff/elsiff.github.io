@@ -33,6 +33,17 @@ p {
     background-color: lightgray;
 }
 
+.showOnScroll {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 2s ease;
+}
+
+.afterScroll {
+    visibility: visible;
+    opacity: 1;
+}
+
 .progress-container {
     width: 100%;
     height: 6px;

@@ -19,6 +19,21 @@
                 document.getElementById("navbar").style.top = "0";
             } else {
                 document.getElementById("navbar").style.top = "-70px";
+
+                var elements = document.getElementsByClassName("showOnScroll");
+                for (var i = 0; i < elements.length; i++) {
+                    var element = elements[i];
+                    var alreadyShown = element.classList.contains("afterScroll");
+                    if (element.getBoundingClientRect().top < 500) {
+                        if (!alreadyShown) {
+                            element.classList.add("afterScroll");
+                        }
+                    } else {
+                        if (alreadyShown) {
+                            element.classList.remove("afterScroll");
+                        }
+                    }
+                }
             }
             prevScrollpos = currentScrollPos;
         }
@@ -49,7 +64,7 @@
             Who Am I?
         </h1>
         <hr style="width: 50%;" />
-        <p style="line-height: 150%; margin-top: 2em;">
+        <p class="showOnScroll" style="line-height: 150%; margin-top: 2em;">
             저는 프로그래머를 지향하는 학생 최우진
             <small>(elsiff)</small>입니다.
             <br /> 광운대학교 소프트웨어학부에 재학중입니다.
@@ -179,7 +194,7 @@
         <h1 style="font-family: 'Roboto', serif; font-weight: 100; font-size: 50pt">
             My works
         </h1>
-        <table style="width: 100%; margin-top: 50px; padding-bottom: 50px; background-color: #EEEEEE">
+        <table class="showOnScroll" style="width: 100%; margin-top: 50px; padding-bottom: 50px; background-color: #EEEEEE">
             <tr>
                 <th style="width: 50%">
                     <h2 style="font-family: 'Roboto', serif; font-weight: 400;">Completed</h2>
