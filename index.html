@@ -65,50 +65,81 @@
             What I studied
         </h1>
         <br />
-        <center>
-            <div class="card" style="width: 30%; background-color: white; color: gray;">
-                <div class="card_header">C / C++ / C# / Java</div>
-                <h1>Basic Grammer</h1>
-                <p>
-                    기본적인 문법과 자료형, 함수 등에 관해 공부했다.
-                </p>
+        <div class="slideshow">
+            <a class="slideshow-prev" id="skills-prev">
+                <p>&#10094;</p>
+            </a>
+            <div class="card-container" , id="skills-container">
+                <div class="card" style="width: 30%; background-color: white; color: gray;">
+                    <div class="card_header">C / C++ / C# / Java</div>
+                    <h1>Basic Grammer</h1>
+                    <p>
+                        기본적인 문법과 자료형, 함수 등에 관해 공부했다.
+                    </p>
+                </div>
+                <div class="card" style="width: 30%; background-color: white; color: gray;">
+                    <div class="card_header">C# / Java</div>
+                    <h1>OOP</h1>
+                    <p>
+                        주로 자바를 다루어 객체지향 개념을 이해했다.
+                    </p>
+                </div>
+                <div class="card" style="width: 30%; background-color: #76FF03; color: white;">
+                    <div class="card_header">HTML / CSS</div>
+                    <h1>Web Design</h1>
+                    <p>
+                        HTML5와 CSS3를 통해 간단한 웹사이트를 제작했다.
+                    </p>
+                </div>
+                <div class="card" style="width: 30%; background-color: #FFC107; color: white;">
+                    <div class="card_header">Java</div>
+                    <h1>Design Patterns</h1>
+                    <p>
+                        효율적인 객체 설계를 위한 여러 가지 기법을 익혔다.
+                    </p>
+                </div>
+                <div class="card" style="width: 30%; background-color: #29B6F6; color: white;">
+                    <div class="card_header">C#</div>
+                    <h1>Unity Engine</h1>
+                    <p>
+                        C#을 다루며 Unity로 게임 프로젝트를 진행중이다.
+                    </p>
+                </div>
+                <div class="card" style="width: 30%; background-color: #29B6F6; color: white;">
+                    <div class="card_header">Java</div>
+                    <h1>TDD</h1>
+                    <p>
+                        jUnit과 Mockito로 테스트 주도 개발을 공부중이다.
+                    </p>
+                </div>
             </div>
-            <div class="card" style="width: 30%; background-color: white; color: gray;">
-                <div class="card_header">C# / Java</div>
-                <h1>OOP</h1>
-                <p>
-                    주로 자바를 다루어 객체지향 개념을 이해했다.
-                </p>
-            </div>
-            <div class="card" style="width: 30%; background-color: #76FF03; color: white;">
-                <div class="card_header">HTML / CSS</div>
-                <h1>Web Design</h1>
-                <p>
-                    HTML5와 CSS3를 통해 간단한 웹사이트를 제작했다.
-                </p>
-            </div>
-            <div class="card" style="width: 30%; background-color: #FFC107; color: white;">
-                <div class="card_header">Java</div>
-                <h1>Design Patterns</h1>
-                <p>
-                    효율적인 객체 설계를 위한 여러 가지 기법을 익혔다.
-                </p>
-            </div>
-            <div class="card" style="width: 30%; background-color: #29B6F6; color: white;">
-                <div class="card_header">C#</div>
-                <h1>Unity Engine</h1>
-                <p>
-                    C#을 다루며 Unity로 게임 프로젝트를 진행중이다.
-                </p>
-            </div>
-            <div class="card" style="width: 30%; background-color: #29B6F6; color: white;">
-                <div class="card_header">Java</div>
-                <h1>TDD</h1>
-                <p>
-                    jUnit과 Mockito로 테스트 주도 개발을 공부중이다.
-                </p>
-            </div>
-        </center>
+            <a class="slideshow-next" id="skills-next">
+                <p>&#10095;</p>
+            </a>
+        </div>
+        <script>
+            slideshowButton(document.getElementById("skills-prev"), 10);
+            slideshowButton(document.getElementById("skills-next"), -10);
+
+            var scrollAmount = 0;
+            function slideshowButton(element, scrollValue) {
+                element.onmousedown = function (event) {
+                    scrollAmount = scrollValue;
+                }
+                element.onmouseup = function (event) {
+                    scrollAmount = 0;
+                }
+            };
+            var container = document.getElementById("skills-container");
+            setInterval(function () {
+                container.scrollLeft -= scrollAmount;
+            }, 10);
+
+            document.getElementById("skills-container").onwheel = function (event) {
+                this.scrollLeft -= (event.deltaY * -2);
+                event.preventDefault();
+            };
+        </script>
     </div>
 
     <div class="container" id="works">
