@@ -37,13 +37,13 @@ p {
     width: 100%;
     height: 6px;
     background: #FFF8E1;
-  }
+}
 
-  .progress-bar {
+.progress-bar {
     height: 6px;
     background: #FFC400;
     width: 0%;
-  }
+}
 
 .slideshow {
     display: flex;
@@ -60,7 +60,7 @@ p {
     z-index: 0;
 }
 
-.slideshow-prev > p, .slideshow-next > p {
+.slideshow-prev>p, .slideshow-next>p {
     position: absolute;
     top: 50%;
     left: 0;
