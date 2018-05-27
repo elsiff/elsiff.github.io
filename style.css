@@ -85,6 +85,7 @@ p {
 
 .card {
     display: inline-block;
+    vertical-align: middle;
     padding-bottom: 10px;
     text-align: left;
     white-space: normal;
