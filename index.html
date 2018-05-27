@@ -61,10 +61,12 @@
     </div>
 
     <div class="container" id="skills">
-        <h1 style="font-family: 'Roboto', serif; font-weight: 400; font-size: 50pt; text-decoration: underline">
+        <h1 style="font-family: 'Roboto', serif; font-weight: 400; font-size: 50pt;">
             What I studied
         </h1>
-        <br />
+        <div class="progress-container" style="margin-bottom: 1em">
+            <div class="progress-bar" id="skills-scroll-indicator"></div>
+        </div>
         <div class="slideshow">
             <a class="slideshow-prev" id="skills-prev">
                 <p>&#10094;</p>
@@ -133,12 +135,22 @@
             var container = document.getElementById("skills-container");
             setInterval(function () {
                 container.scrollLeft -= scrollAmount;
+                updateScrollIndicator();
             }, 10);
 
             document.getElementById("skills-container").onwheel = function (event) {
                 this.scrollLeft -= (event.deltaY * -2);
                 event.preventDefault();
+
+                updateScrollIndicator();
             };
+
+            function updateScrollIndicator() {
+                var current = container.scrollLeft;
+                var max = container.scrollWidth - container.clientWidth;
+                var scrolled = (current / max) * 100;
+                document.getElementById("skills-scroll-indicator").style.width = scrolled + "%";
+            }
         </script>
     </div>
 
