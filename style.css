@@ -20,7 +20,7 @@ p {
     top: 0;
     color: gray;
     transition: top 0.3s;
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .2);
 }
 
 .navbar a {
@@ -137,21 +137,60 @@ a:link, a:visited, a:active, a:hover {
     text-decoration: none;
 }
 
-.bordered_button span {
-    display: inline-block;
-    border: 2px solid white;
-    padding: 10px;
+.btn {
+    background-color: #00000000;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
     margin: 10px;
+    padding: 14px 28px;
 }
 
-.filled_button span {
-    display: inline-block;
-    background: white;
+.outline_brown {
+    border: 2px solid #e7e7e7;
+    transition: 0.4s;
+}
+
+.outline_brown:hover {
+    background-color: #e7e7e7;
+    color: #795548;
+}
+
+.animated_white {
+    background-color: white;
     color: black;
     mix-blend-mode: lighten;
     border: none;
-    padding: 15px;
-    margin: 10px;
+    transition: all 0.4s;
+    opacity: 1;
+    width: 180px;
+    padding: 18px;
+    font-size: 18px;
+}
+
+.animated_white span {
+    position: relative;
+    color: black;
+    transition: 0.5s;
+}
+
+.animated_white span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.animated_white:hover span {
+    padding-right: 25px;
+}
+
+.animated_white:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 
 #title {
