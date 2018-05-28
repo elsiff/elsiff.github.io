@@ -202,11 +202,34 @@ a:link, a:visited, a:active, a:hover {
     text-align: center;
 }
 
+#title h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 120px;
+    margin: 0;
+}
+
+#title hr {
+    border: 3px solid white;
+    width: 15%;
+}
+
 #introduction {
     padding-top: 12em;
     padding-bottom: 12em;
     text-align: center;
     color: #424242;
+}
+
+#introduction h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 50pt;
+}
+
+#introduction hr {
+    width: 50%;
+    margin-bottom: 2em;
 }
 
 #introduction p {
@@ -224,12 +247,43 @@ a:link, a:visited, a:active, a:hover {
     text-align: left;
 }
 
+#skills>h1 {
+    font-family: 'Roboto', serif;
+    font-weight: 400;
+    font-size: 50pt;
+    margin-bottom: 0.1em;
+}
+
 #works {
     background-color: white;
     padding-top: 6em;
     padding-bottom: 10em;
     color: #424242;
     text-align: center;
+}
+
+#works h1 {
+    font-family: 'Roboto', serif;
+    font-weight: 100;
+    font-size: 50pt;
+}
+
+#works table {
+    width: 100%;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    background-color: #EEEEEE;
+}
+
+#works th h2 {
+    font-family: 'Roboto', serif;
+    font-weight: 400;
+}
+
+#works td ul {
+    display: table;
+    margin: 0 auto;
+    text-align: left;
 }
 
 #music_bg {
@@ -252,6 +306,12 @@ a:link, a:visited, a:active, a:hover {
     text-align: left;
 }
 
+#music h1 {
+    font-family: 'Roboto', serif;
+    font-weight: 700;
+    font-size: 40pt;
+}
+
 #contact {
     background-color: #795548;
     padding-top: 3em;
@@ -260,8 +320,30 @@ a:link, a:visited, a:active, a:hover {
     text-align: right;
 }
 
+#contact h1 {
+    font-family: 'Roboto', serif;
+    font-weight: 700;
+    font-size: 30pt;
+    text-transform: uppercase;
+}
+
+#contact-content::after {
+    clear: both;
+    display: table;
+    content: '';
+}
+
+#contact-buttons {
+    display: table-cell;
+    text-align: left;
+    float: left;
+}
+
 #contact-list {
+    display: table-cell;
     margin: 0.5em;
+    text-align: right;
+    float: right;
 }
 
 #contact-list>p {
