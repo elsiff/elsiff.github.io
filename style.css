@@ -164,7 +164,7 @@ a:link, a:visited, a:active, a:hover {
     border: none;
     transition: all 0.4s;
     opacity: 1;
-    width: 180px;
+    width: 200px;
     padding: 18px;
     font-size: 18px;
 }
