@@ -12,6 +12,7 @@
     <meta name="author" content="elsiff" />
     <meta name="description" content="elsiff's portfolio page" />
     <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
     <script>
         var prevScrollpos = window.pageYOffset;
         window.onscroll = function () {
@@ -20,6 +21,9 @@
                 document.getElementById("navbar").style.top = "0";
             } else {
                 document.getElementById("navbar").style.top = "-70px";
+
+                if (isMobileMenuOpened())
+                    closeMobileMenu();
 
                 var elements = document.getElementsByClassName("showOnScroll");
                 for (var i = 0; i < elements.length; i++) {
@@ -52,6 +56,29 @@
         <a href="#works">Works</a>
         <a href="#music">Music</a>
         <a href="#contact" onclick="scrollSmoothly(event);">Contact</a>
+        <a href="javascript:void(0);" class="menu-icon" onclick="toggleMobileMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <script>
+            var navbar = document.getElementById("navbar");
+
+            function toggleMobileMenu() {
+                if (!isMobileMenuOpened()) {
+                    openMobileMenu();
+                } else {
+                    closeMobileMenu();
+                }
+            }
+            function isMobileMenuOpened() {
+                return (navbar.className !== "navbar");
+            }
+            function openMobileMenu() {
+                navbar.className += " responsive";
+            }
+            function closeMobileMenu() {
+                navbar.className = "navbar";
+            }
+        </script>
     </div>
 
     <div class="container" id="title">
@@ -155,20 +182,29 @@
             slideshowButton(document.getElementById("skills-prev"), 10);
             slideshowButton(document.getElementById("skills-next"), -10);
 
-            var scrollAmount = 0;
-            function slideshowButton(element, scrollValue) {
-                element.onmousedown = function (event) {
-                    scrollAmount = scrollValue;
-                }
-                element.onmouseup = function (event) {
-                    scrollAmount = 0;
-                }
-            };
             var container = document.getElementById("skills-container");
             setInterval(function () {
                 container.scrollLeft -= scrollAmount;
                 updateScrollIndicator();
             }, 10);
+
+            var scrollAmount = 0;
+            var scrollStartTime;
+            function slideshowButton(element, scrollValue) {
+                element.onmousedown = function (event) {
+                    scrollAmount = scrollValue;
+                    scrollStartTime = new Date();
+                }
+                element.onmouseup = function (event) {
+                    scrollAmount = 0;
+
+                    var scrollEndTime = new Date();
+                    // For mobile devices
+                    if (scrollStartTime - scrollEndTime == 0) {
+                        container.scrollLeft -= scrollValue * 30;
+                    }
+                }
+            };
 
             document.getElementById("skills-container").onwheel = function (event) {
                 this.scrollLeft -= (event.deltaY * -2);
@@ -249,17 +285,6 @@
     <div class="container" id="contact">
         <h1>contact</h1>
         <div id="contact-content">
-            <div id="contact-buttons">
-                <button class="btn outline_brown" onclick="window.open('https://github.com/elsiff', '_target');">
-                    GitHub
-                </button>
-                <button class="btn outline_brown" onclick="window.open('https://www.spigotmc.org/members/elsiff.206638/', '_target');">
-                    SpigotMC
-                </button>
-                <button class="btn outline_brown" onclick="window.open('https://blog.naver.com/cwjh1002', '_target');">
-                    Blog
-                </button>
-            </div>
             <div id="contact-list">
                 <p>
                     <a href="mailto://elsiff@gmail.com">
@@ -279,6 +304,17 @@
                         <i class="fa fa-skype"></i>
                     </a>
                 </p>
+            </div>
+            <div id="contact-buttons">
+                <button class="btn outline_brown" onclick="window.open('https://github.com/elsiff', '_target');">
+                    GitHub
+                </button>
+                <button class="btn outline_brown" onclick="window.open('https://www.spigotmc.org/members/elsiff.206638/', '_target');">
+                    SpigotMC
+                </button>
+                <button class="btn outline_brown" onclick="window.open('https://blog.naver.com/cwjh1002', '_target');">
+                    Blog
+                </button>
             </div>
         </div>
     </div>
