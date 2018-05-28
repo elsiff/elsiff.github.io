@@ -25,7 +25,8 @@
                 for (var i = 0; i < elements.length; i++) {
                     var element = elements[i];
                     var alreadyShown = element.classList.contains("afterScroll");
-                    if (element.getBoundingClientRect().top < 500) {
+                    var windowBottomToElementTop = element.getBoundingClientRect().top - window.innerHeight;
+                    if (windowBottomToElementTop < -150) {
                         if (!alreadyShown) {
                             element.classList.add("afterScroll");
                         }
