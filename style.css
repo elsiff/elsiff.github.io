@@ -260,6 +260,14 @@ a:link, a:visited, a:active, a:hover {
     text-align: right;
 }
 
+#contact-list {
+    margin: 0.5em;
+}
+
+#contact-list > p {
+    margin: 0.1em;
+}
+
 #footer {
     background-color: #263238;
     padding-top: 1px;
