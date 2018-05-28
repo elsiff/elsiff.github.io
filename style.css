@@ -372,13 +372,11 @@ a:link, a:visited, a:active, a:hover {
 }
 
 #contact-buttons {
-    display: table-cell;
     text-align: left;
     float: left;
 }
 
 #contact-list {
-    display: table-cell;
     margin: 0.5em;
     text-align: right;
     float: right;
