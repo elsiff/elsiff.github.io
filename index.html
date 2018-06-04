@@ -16,33 +16,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         var prevScrollpos = window.pageYOffset;
+        var isAutoScrolling = false;
         window.onscroll = function () {
-            var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementById("navbar").style.top = "0";
-            } else {
-                document.getElementById("navbar").style.top = "-70px";
+            if (!isAutoScrolling) {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollpos > currentScrollPos) {
+                    document.getElementById("navbar").style.top = "0";
+                } else {
+                    document.getElementById("navbar").style.top = "-70px";
 
-                if (isMobileMenuOpened())
-                    closeMobileMenu();
+                    if (isMobileMenuOpened())
+                        closeMobileMenu();
 
-                var elements = document.getElementsByClassName("showOnScroll");
-                for (var i = 0; i < elements.length; i++) {
-                    var element = elements[i];
-                    var alreadyShown = element.classList.contains("afterScroll");
-                    var windowBottomToElementTop = element.getBoundingClientRect().top - window.innerHeight;
-                    if (windowBottomToElementTop < -150) {
-                        if (!alreadyShown) {
-                            element.classList.add("afterScroll");
-                        }
-                    } else {
-                        if (alreadyShown) {
-                            element.classList.remove("afterScroll");
+                    var elements = document.getElementsByClassName("showOnScroll");
+                    for (var i = 0; i < elements.length; i++) {
+                        var element = elements[i];
+                        var alreadyShown = element.classList.contains("afterScroll");
+                        var windowBottomToElementTop = element.getBoundingClientRect().top - window.innerHeight;
+                        if (windowBottomToElementTop < -150) {
+                            if (!alreadyShown) {
+                                element.classList.add("afterScroll");
+                            }
+                        } else {
+                            if (alreadyShown) {
+                                element.classList.remove("afterScroll");
+                            }
                         }
                     }
                 }
+                prevScrollpos = currentScrollPos;
             }
-            prevScrollpos = currentScrollPos;
         }
     </script>
 </head>
@@ -84,9 +87,12 @@
                 $('#navbar').find('a').click(function (event) {
                     event.preventDefault();
                     var $href = $(this).attr('href');
+                    isAutoScrolling = true;
                     $('html, body').stop().animate({
                         scrollTop: $($href).offset().top
-                    }, 1000);
+                    }, 1000, function () {
+                        isAutoScrolling = false;
+                    });
                 });
             });
         </script>
