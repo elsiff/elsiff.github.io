@@ -223,9 +223,22 @@
                 }
             };
 
-            document.getElementById("skills-container").onwheel = function (event) {
-                this.scrollLeft -= (event.deltaY * -2);
+            var container = document.getElementById("skills-container");
+            container.onwheel = function (event) {
+                //this.scrollLeft -= (event.deltaY * -2);
                 event.preventDefault();
+
+                var current = container.scrollLeft;
+                var maxScroll = container.scrollWidth - container.offsetWidth;
+                var diff = event.deltaY;
+
+                var changed = Math.max(Math.min(current + diff, maxScroll), 0);
+                var realDiff = changed - current;
+                var realDiffRate = realDiff / diff;
+
+                $('#skills-container').animate({
+                    scrollLeft: "+=" + realDiff
+                }, 50 * realDiffRate, 'linear');
 
                 updateScrollIndicator();
             };
