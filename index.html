@@ -79,6 +79,16 @@
             function closeMobileMenu() {
                 navbar.className = "navbar";
             }
+
+            $(document).ready(function () {
+                $('#navbar').find('a').click(function (event) {
+                    event.preventDefault();
+                    var $href = $(this).attr('href');
+                    $('html, body').stop().animate({
+                        scrollTop: $($href).offset().top
+                    }, 1000);
+                });
+            });
         </script>
     </div>
 
