@@ -324,7 +324,7 @@ a:link, a:visited, a:active, a:hover {
     text-align: left;
 }
 
-#music_bg {
+#music_bg_back {
     background-color: #FF6F00;
     background-image: url("bg_concert.jpg");
     background-repeat: no-repeat;
@@ -334,12 +334,14 @@ a:link, a:visited, a:active, a:hover {
     margin: 0px;
 }
 
-#music {
+#music_bg_front {
     background: linear-gradient(to right, #FF6F00 30%, #FF6F0000);
     background-repeat: no-repeat;
     background-attachment: scroll;
+}
+
+#music {
     padding-top: 8em;
-    padding-bottom: 8em;
     color: white;
     text-align: left;
 }
@@ -348,6 +350,12 @@ a:link, a:visited, a:active, a:hover {
     font-family: 'Roboto', serif;
     font-weight: 700;
     font-size: 40pt;
+}
+
+.rhythm-effect {
+    margin-top: 5em;
+    margin-bottom: 0;
+    vertical-align: bottom;
 }
 
 #contact {
